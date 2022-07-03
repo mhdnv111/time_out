@@ -1,0 +1,221 @@
+@import url(../CSS/loading.css);
+@import url(../CSS/modal.css);
+@import url(../CSS/carusel.css);
+@import url(../CSS/animeText.css);
+
+header{
+    background:url(../img/лого.png),linear-gradient(233deg, #e56420, #c22525, #3d9c31, #37bbde);
+    height:100vh;
+    background-size:cover;
+    background-blend-mode: hard-light;
+    animation: hue-rotate 3s linear infinite;
+}
+
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+nav{
+    background:linear-gradient(233deg, #e56420, #c22525, #3d9c31, #37bbde);
+    background-size:cover;
+    background-blend-mode: hard-light;
+    animation: hue-rotate 3s linear infinite;
+    position: fixed;
+    width: 100%;
+}
+
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+.nav{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+}
+.logo{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+    position: absolute;
+    border: 1px solid black;
+    left: 0;
+    top: 5px;
+    z-index: 1;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+.menu{
+    display: flex;
+    gap: 20px;
+}
+
+/* insta */
+.fa-instagram{
+    font-size: 50px;
+}
+/* button */
+.glow-on-hover {
+   padding: 10px 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-weight: 900;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.menuToggle{  
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: none;
+}
+
+@media( max-width: 770px){
+    .menuToggle{
+        display: block;
+    }
+    .menu{
+        display: none;
+        position: absolute;
+        width: 100%;
+        margin-top: 7px;
+        margin-left: -10px;
+        padding-left: 10px;
+        z-index: 9999;
+    }
+    .menu li{
+        display: block;
+    }
+    
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 40px;
+    height: 4px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    transition: 0.5s;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: "";
+    width: 40px;
+    height: 4px;
+    position: absolute;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.hamburger:before {
+    top: -16px;
+}
+
+.hamburger:after {
+    top: 16px;
+}
+
+.icon.active .hamburger {
+    background: rgba(0, 0, 0, 0);
+}
+
+.icon.active .hamburger:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.icon.active .hamburger:after {
+    top: 0;
+    transform: rotate(135deg);
+}
+.red{
+    color: red;
+    font-size: 60px;
+}
